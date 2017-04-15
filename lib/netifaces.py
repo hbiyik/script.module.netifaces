@@ -1,4 +1,7 @@
 import abi
 import sys
 
-sys.modules[__name__] = abi.loadfile("script.module.netifaces", "netifaces")
+
+__m = abi.load("script.module.netifaces", "netifaces")
+import sys
+sys.modules[__name__] = __m
